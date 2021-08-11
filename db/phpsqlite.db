@@ -1,0 +1,6 @@
+CREATE TABLE [IF NOT EXISTS] [todo].tasks (
+    task_number INTEGER PRIMARY KEY,
+    task_name TEXT,
+    task_status TEXT DEFAULT 'IN PROGRESS',
+    task_priority INTEGER
+)
