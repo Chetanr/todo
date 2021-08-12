@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Config' => $baseDir . '/app/Config.php',
-    'App\\SQLiteConnection' => $baseDir . '/app/SQLiteConnection.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Db\\Config' => $baseDir . '/db/Config.php',
+    'Db\\SQLiteConnection' => $baseDir . '/db/SQLiteConnection.php',
+    'Db\\SQLiteCreateTable' => $baseDir . '/db/SQLiteCreateTable.php',
+    'Db\\SQLiteInsert' => $baseDir . '/db/SQLiteInsert.php',
 );

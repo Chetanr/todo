@@ -4,9 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3fcb0ec835112bf76b0b0e4fc60b424c
+class ComposerStaticInitf69fc75f14e1086c01088b257ea08201
 {
     public static $prefixLengthsPsr4 = array (
+        'D' => 
+        array (
+            'Db\\' => 3,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -14,6 +18,10 @@ class ComposerStaticInit3fcb0ec835112bf76b0b0e4fc60b424c
     );
 
     public static $prefixDirsPsr4 = array (
+        'Db\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/db',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -21,17 +29,19 @@ class ComposerStaticInit3fcb0ec835112bf76b0b0e4fc60b424c
     );
 
     public static $classMap = array (
-        'App\\Config' => __DIR__ . '/../..' . '/app/Config.php',
-        'App\\SQLiteConnection' => __DIR__ . '/../..' . '/app/SQLiteConnection.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Db\\Config' => __DIR__ . '/../..' . '/db/Config.php',
+        'Db\\SQLiteConnection' => __DIR__ . '/../..' . '/db/SQLiteConnection.php',
+        'Db\\SQLiteCreateTable' => __DIR__ . '/../..' . '/db/SQLiteCreateTable.php',
+        'Db\\SQLiteInsert' => __DIR__ . '/../..' . '/db/SQLiteInsert.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3fcb0ec835112bf76b0b0e4fc60b424c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3fcb0ec835112bf76b0b0e4fc60b424c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3fcb0ec835112bf76b0b0e4fc60b424c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf69fc75f14e1086c01088b257ea08201::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf69fc75f14e1086c01088b257ea08201::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf69fc75f14e1086c01088b257ea08201::$classMap;
 
         }, null, ClassLoader::class);
     }

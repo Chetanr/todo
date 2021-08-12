@@ -1,13 +1,11 @@
 <?php
 require 'vendor/autoload.php';
 
-use App\SQLiteConnection;
+use Db\SQLiteConnection as SQLiteConnection;
+use Db\SQLiteCreateTable as SQLiteCreateTable;
 
-$pdo = (new SQLiteConnection())->connect();
-// if ($pdo != null)
-//     echo 'Connected to the SQLite database successfully!';
-// else
-//     echo 'Whoops, could not connect to the SQLite database!';
+$sqlite = new SQLiteCreateTable((new SQLiteConnection())->connect());
+$sqlite->createTables();
 ?>
 
 <html>
@@ -16,14 +14,12 @@ $pdo = (new SQLiteConnection())->connect();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <h1>To do List</h1>
     </head>
-    
-    
-
     <main class="cards">
         <article class = "card">
+        <form action="addTask.php" method="post">
             <div class="text">
                 <div>
-                    <input type = "text" maxlength="30" class = "task"/>
+                    <input type = "text" name="task" id = "task" maxlength="30" class = "task"/>
                     <!-- &nbsp; -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -34,9 +30,9 @@ $pdo = (new SQLiteConnection())->connect();
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                     </svg>
                 </div>
-            
-            <button>Add Task</button> 
+                <input type="submit" class = "button" value = "Add task" />
             </div>
+            </form>
             <br/>   
         </article>
    
