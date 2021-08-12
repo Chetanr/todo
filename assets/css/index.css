@@ -1,0 +1,46 @@
+h1 {
+  margin-left: 45%;
+}
+.cards {
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 100px;
+  align-items: center;
+}
+
+.card {
+  flex: 0 0 200px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 450px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* .card .text {
+  margin-left: 20px;
+} */
+
+.card .text > button {
+  background: gray;
+  border: 0;
+  margin-top: 10px;
+  margin-left: 20px;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.task {
+  border-style: hidden;
+  margin-left: 10px;
+  width: 240px;
+}
+
+.task:hover,
+.task:focus {
+  border-style: solid;
+}
