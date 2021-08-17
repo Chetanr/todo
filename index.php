@@ -30,18 +30,21 @@ $tasks = $select->getTasks();
                     $i = 0;
                     while(!empty($tasks[$i])) {
                 ?>
-                <div>
+                <div class="content-div">
                     <label class="label">
                         <?php echo $tasks[$i]['task_name'];?>
                     </label>
+                </div>
                     &nbsp; &nbsp;
+                <div class="content-div2">
                     <form action="deleteTask.php" method="post">
-                    <button>
-                    <i class="fa fa-trash"></i>
-                    </button>
+                        <button>
+                        <i class="fa fa-trash"></i>
+                        </button>
                     </form>
-                    <!-- &nbsp; -->
-                    <form action="updateTask.php" method="post">
+                </div>
+                <div class="content-div3">
+                <form action="updateTask.php" method="post">
                     <input type = "hidden" value="<?php
                         echo $tasks[$i]['task_name'];
                         ?>" class="label" name = "taskName">
@@ -51,6 +54,10 @@ $tasks = $select->getTasks();
                     </button>
                     </form>
                 </div>
+                    
+                    <!-- &nbsp; -->
+                    
+                <!-- </div> -->
                 <?php
                 $i++;
             }?>
