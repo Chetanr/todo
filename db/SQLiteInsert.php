@@ -22,7 +22,9 @@ class SQLiteInsert {
             ':task_priority' => $priority,
         ]) or die(print_r($statement->errorInfo(), true));
 
-        return $this->pdo->lastInsertId();
+        $this->pdo->lastInsertId();
+
+        header("Location: http://localhost/todo/");
 
     }
 

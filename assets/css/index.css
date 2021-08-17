@@ -1,20 +1,14 @@
 h1 {
   margin-left: 45%;
 }
-.cards {
-  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 100px;
-  margin-right: 100px;
-  align-items: center;
-}
 
 .card {
-  flex: 0 0 310px;
+  flex: 0 0 220px;
+  padding: 2px;
   display: flex;
   flex-wrap: wrap;
   margin-left: 450px;
+  margin-right: 450px;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
 }
@@ -23,12 +17,12 @@ h1 {
   margin-top: 20px;
 }
 
-.card .text > .button {
+.button {
   background: gray;
   border: 0;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 30px;
+  margin-left: 150px;
   color: white;
   padding: 10px;
   width: 200px;
@@ -36,13 +30,17 @@ h1 {
 }
 
 .task {
-  border-style: hidden;
-  margin-left: 10px;
+  border-style: solid;
+  margin-left: 150px;
   margin-right: 10px;
   width: 240px;
+  height: 30px;
 }
 
-.task:hover,
-.task:focus {
-  border-style: solid;
+#icon {
+  margin-left: 2px;
+}
+
+.label {
+  margin-left: 200px;
 }

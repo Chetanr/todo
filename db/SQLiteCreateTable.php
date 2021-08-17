@@ -15,7 +15,7 @@ class SQLiteCreateTable {
 
     public function createTables() {
         $commands = ['CREATE TABLE IF NOT EXISTS tasks (
-                        task_number INTEGER PRIMARY KEY,
+                        task_number VARCHAR(10) PRIMARY KEY,
                         task_name   VARCHAR (255) NOT NULL,
                         task_status VARCHAR (30),
                         task_priority VARCHAR (30)
