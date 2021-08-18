@@ -49,14 +49,17 @@ h4 {
   margin-left: 200px;
 }
 
-.content-div {
+.content-div,
+.total-content1 {
   display: inline-block;
   margin-right: 5px;
 }
 
-.content-div2 {
+.content-div2,
+.total-content2 {
   display: inline-block;
 }
-.content-div3 {
+.content-div3,
+.total-content3 {
   display: inline-block;
 }

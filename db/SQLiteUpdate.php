@@ -32,7 +32,6 @@ class SQLiteUpdate {
                 
 
         $stmt = $this->pdo->prepare($sql);
-        // echo $sql;
         // passing values to the parameters
         $stmt->bindValue(':task', $task);
 

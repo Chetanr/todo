@@ -5,7 +5,7 @@ namespace Db;
 /**
  * PHP SQLite Update Demo
  */
-class SQLiteSelect {
+class SQLiteDelete {
 
     /**
      * PDO object
@@ -20,17 +20,20 @@ class SQLiteSelect {
         $this->pdo = $pdo;
     }
 
+
     /*
-        get all the tasks from the database
+        function to perform the task deletion from the table
     */
-    public function getTasks() {
+    public function deleteTask($task) {
         // SQL statement to get all tasks
-        $sql = "SELECT * FROM tasks";
+        $sql = "DELETE FROM tasks where task_name = :task";
 
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute();
-        $result =  $stmt->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;
+        $stmt->bindValue(':task', $task);
+
+        $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+
+        header("Location: http://localhost/todo/");
 
     }
 }

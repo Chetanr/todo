@@ -10,6 +10,9 @@ class SQLiteInsert {
         $this->pdo = $pdo;
     }
 
+    /*
+        function to insert a particular task into the database
+    */
     public function insertTask($task) {
         $sql = 'INSERT INTO tasks(task_name, task_status, task_priority) ' . 'VALUES(:task_name, :task_status, :task_priority)';
         $status = 'In Progress';

@@ -6,7 +6,9 @@ class SQLiteConnection {
 
     private $pdo;
 
-
+    /*
+        connect to the database
+    */
     public function connect() {
         if ($this->pdo == null) {
             try {

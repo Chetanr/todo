@@ -26,20 +26,26 @@ $tasks = $select->getTasks();
                     <br/>
                     <input type="submit" class = "button" value = "Add task" />
                 </form>
-                <h4>Tasks in Progress</h4>
+                <h4>Tasks Ongoing</h4>
                 <?php
-                    $i = 0;
-                    while(!empty($tasks[$i])) {
-                        if ($tasks[$i]['task_status'] == 'In Progress'){
+                    $index = 0;
+                    $inProgressCount = 0;
+                    while(!empty($tasks[$index])) {
+                        if ($tasks[$index]['task_status'] == 'In Progress'){
+                            $inProgressCount++;
                 ?>
                 <div class="content-div">
                     <label class="label">
-                        <?php echo $tasks[$i]['task_name'];?>
+                        <?php echo $tasks[$index]['task_name'];?>
                     </label>
                 </div>
                     &nbsp; &nbsp;
                 <div class="content-div2">
                     <form action="deleteTask.php" method="post">
+                    <input type = "hidden" value="<?php
+                        echo $tasks[$index]['task_name'];
+                        ?>" class="label" name = "taskName2">
+                    </input>
                         <button>
                         <i class="fa fa-trash"></i>
                         </button>
@@ -48,7 +54,7 @@ $tasks = $select->getTasks();
                 <div class="content-div3">
                 <form action="updateTask.php" method="post">
                     <input type = "hidden" value="<?php
-                        echo $tasks[$i]['task_name'];
+                        echo $tasks[$index]['task_name'];
                         ?>" class="label" name = "taskName">
                     </input>
                     <button>
@@ -56,14 +62,39 @@ $tasks = $select->getTasks();
                     </button>
                     </form>
                 </div>
-                    
-                    <!-- &nbsp; -->
-                    
-                <!-- </div> -->
+                <?php
+                    }
+                $index++;
+            }?>
+            <h4>Tasks Completed</h4>
+                <?php
+                    $j = 0;
+                    $k = 0;
+                    while(!empty($tasks[$j])) {
+                        if ($tasks[$j]['task_status'] == 'Completed'){
+                            $k++;
+                ?>
+                <div class="content-div">
+                    <label class="label">
+                        <?php echo $tasks[$j]['task_name'];?>
+                    </label>
+                </div>
                 <?php
                         }
-                $i++;
+                $j++;
             }?>
+            <br/>
+            <br/>
+            <div class="total-content1">
+                <h4>Total: <?php echo $inProgressCount + $k ?></h4>
+            </div>
+            <div class="total-content2">
+                <h4>Ongoing: <?php echo $inProgressCount ?></h4>
+            </div>
+            <div class="total-content3">
+                <h4>Completed: <?php echo $k ?></h4>
+            </div>
+            
             </div>
             <br/>   
         </article> 
