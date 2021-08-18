@@ -74,6 +74,15 @@ h4 {
   display: inline-block;
 }
 
+.icon-help {
+  display: inline-block;
+  margin-left: 60px;
+}
+
+p {
+  font-size: small;
+}
+
 .label-priority {
   color: blue;
 }

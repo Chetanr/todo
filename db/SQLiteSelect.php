@@ -17,7 +17,7 @@ class SQLiteSelect {
         get all the tasks from the database
     */
     public function getTasks() {
-        $sql = "SELECT * FROM tasks ORDER BY task_priority";
+        $sql = "SELECT * FROM tasks ORDER BY task_priority, task_name";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();

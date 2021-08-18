@@ -118,6 +118,15 @@ $tasks = $select->getTasks();
             
             </div>
             <br/>   
+                <div class="icon-help">
+                    <p> <i class="fa fa-check"></i> Mark Complete </p>
+                </div>
+                <div class="icon-help">
+                    <p> <i class="fa fa-trash"></i> Delete Task </p>
+                </div>
+                <div class="icon-help">
+                    <p> <i class="fa fa-refresh"></i> Update Priority </p>
+                </div>
         </article> 
 </html>
 
