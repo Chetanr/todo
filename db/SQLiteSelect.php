@@ -28,10 +28,10 @@ class SQLiteSelect {
      */
     public function getTasks() {
         // SQL statement to get all tasks
-        $sql = "SELECT * FROM tasks WHERE task_status = :status";
+        $sql = "SELECT * FROM tasks";
 
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([':status' => 'In Progress']);
+        $stmt->execute();
         $result =  $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
 

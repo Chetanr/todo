@@ -26,9 +26,11 @@ $tasks = $select->getTasks();
                     <br/>
                     <input type="submit" class = "button" value = "Add task" />
                 </form>
+                <h4>Tasks in Progress</h4>
                 <?php
                     $i = 0;
                     while(!empty($tasks[$i])) {
+                        if ($tasks[$i]['task_status'] == 'In Progress'){
                 ?>
                 <div class="content-div">
                     <label class="label">
@@ -59,6 +61,7 @@ $tasks = $select->getTasks();
                     
                 <!-- </div> -->
                 <?php
+                        }
                 $i++;
             }?>
             </div>
