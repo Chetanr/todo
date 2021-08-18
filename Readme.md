@@ -1,4 +1,4 @@
-This is a simple project to create and maintain a todo list built using PHP, HTML and CSS.
+This is a simple project to create and maintain a todo list built using PHP, SQLite, HTML and CSS.
 
 ## Running the code
 
