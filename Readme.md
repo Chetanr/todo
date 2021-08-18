@@ -8,4 +8,4 @@ To run the code,
 2. Open the terminal and run `composer update` from the root directory of the project.
 3. Next, run `composer dump-autoload -o` from the root directory of the project to load the autoload file
 4. Start the XAMPP Apache server.
-5. Once the server starts, open the web browser and use localhost/todo to run the application.
+5. Once the server starts, open the web browser and use `localhost/todo` to run the application.
