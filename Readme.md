@@ -1,5 +1,7 @@
 This is a simple project to create and maintain a todo list built using PHP, SQLite, HTML and CSS.
 
+PDO has been used to establish connections with SQLite database. The project structuring has been done using **composer**.
+
 ## Running the code
 
 To run the code,
