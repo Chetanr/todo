@@ -22,7 +22,7 @@ $tasks = $select->getTasks();
         <article class = "card">
             <div class="text">
                 <form action="addTask.php" method="post">
-                    <input type = "text" name="task" id = "task" maxlength="30" class = "task"/>
+                    <input required type = "text" placeholder="Enter task name.." name="task" id = "task" maxlength="30" class = "task"/>
                     <br/>
                     <input type="submit" class = "button" value = "Add task" />
                 </form>
@@ -36,6 +36,7 @@ $tasks = $select->getTasks();
                 ?>
                 <div class="content-div">
                     <label class="label">
+                    <i class="fa fa-plus"></i>
                         <?php echo $tasks[$index]['task_name'];?>
                     </label>
                     <label class="label-priority">
@@ -46,7 +47,8 @@ $tasks = $select->getTasks();
                 <div class="content-div2">
                 <form action="updatePriority.php" method="post">
                 <select name="priority" id="priority">
-                        <option value="Low">Low</option>
+                        <option value="" disabled selected>Select a priority.!</option>
+                        <option value="Nominal">Nominal</option>
                         <option value="Med">Med</option>
                         <option value="High">High</option>
                     </select>
@@ -93,9 +95,9 @@ $tasks = $select->getTasks();
                         if ($tasks[$index]['task_status'] == 'Completed'){
                             $completedCount++;
                 ?>
-                <br/>
                 <div class="content-div">
-                    <label class="label">
+                    <label class="label2">
+                    <i class="fa fa-minus"></i>
                         <?php echo $tasks[$index]['task_name'];?>
                     </label>
                 </div>
@@ -105,13 +107,13 @@ $tasks = $select->getTasks();
             }?>
             <br/>
             <div class="total-content1">
-                <h4>Total: <?php echo $inProgressCount + $completedCount ?></h4>
+                <h4 class = "count">Total: <?php echo $inProgressCount + $completedCount ?></h4>
             </div>
             <div class="total-content2">
-                <h4>Ongoing: <?php echo $inProgressCount ?></h4>
+                <h4 class = "count">Ongoing: <?php echo $inProgressCount ?></h4>
             </div>
             <div class="total-content3">
-                <h4>Completed: <?php echo $completedCount ?></h4>
+                <h4 class = "count">Completed: <?php echo $completedCount ?></h4>
             </div>
             
             </div>

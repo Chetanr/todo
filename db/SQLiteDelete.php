@@ -18,7 +18,6 @@ class SQLiteDelete {
         function to perform the task deletion from the table
     */
     public function deleteTask($task) {
-        // SQL statement to get all tasks
         $sql = "DELETE FROM tasks where task_name = :task";
 
         $stmt = $this->pdo->prepare($sql);
