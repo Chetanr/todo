@@ -2,15 +2,8 @@
 
 namespace Db;
 
-/**
- * PHP SQLite Update Demo
- */
 class SQLiteDelete {
 
-    /**
-     * PDO object
-     * @var \PDO
-     */
     private $pdo;
 
     /**

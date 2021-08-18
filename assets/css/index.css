@@ -49,17 +49,24 @@ h4 {
   margin-left: 200px;
 }
 
-.content-div,
-.total-content1 {
+.content-div {
   display: inline-block;
   margin-right: 5px;
 }
 
-.content-div2,
-.total-content2 {
+.total-content1 {
   display: inline-block;
+  margin-left: 100px;
 }
+
+.content-div2,
+.content-div1,
+.total-content2,
 .content-div3,
 .total-content3 {
   display: inline-block;
+}
+
+.label-priority {
+  color: blue;
 }

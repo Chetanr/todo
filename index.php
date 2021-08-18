@@ -38,8 +38,27 @@ $tasks = $select->getTasks();
                     <label class="label">
                         <?php echo $tasks[$index]['task_name'];?>
                     </label>
+                    <label class="label-priority">
+                        (<?php echo $tasks[$index]['task_priority'];?>)
+                    </label>
                 </div>
                     &nbsp; &nbsp;
+                <div class="content-div2">
+                <form action="updatePriority.php" method="post">
+                <select name="priority" id="priority">
+                        <option value="Low">Low</option>
+                        <option value="Med">Med</option>
+                        <option value="High">High</option>
+                    </select>
+                <input type = "hidden" value="<?php
+                    echo $tasks[$index]['task_name'];
+                    ?>" class="label" name = "taskName3">
+                </input>
+                    <button>
+                    <i class="fa fa-refresh"></i>
+                    </button>
+                    </form>
+                </div>
                 <div class="content-div2">
                     <form action="deleteTask.php" method="post">
                     <input type = "hidden" value="<?php
@@ -63,36 +82,36 @@ $tasks = $select->getTasks();
                     </form>
                 </div>
                 <?php
-                    }
+                }
                 $index++;
             }?>
             <h4>Tasks Completed</h4>
                 <?php
-                    $j = 0;
-                    $k = 0;
-                    while(!empty($tasks[$j])) {
-                        if ($tasks[$j]['task_status'] == 'Completed'){
-                            $k++;
+                    $index = 0;
+                    $completedCount = 0;
+                    while(!empty($tasks[$index])) {
+                        if ($tasks[$index]['task_status'] == 'Completed'){
+                            $completedCount++;
                 ?>
+                <br/>
                 <div class="content-div">
                     <label class="label">
-                        <?php echo $tasks[$j]['task_name'];?>
+                        <?php echo $tasks[$index]['task_name'];?>
                     </label>
                 </div>
                 <?php
-                        }
-                $j++;
+                }
+                $index++;
             }?>
             <br/>
-            <br/>
             <div class="total-content1">
-                <h4>Total: <?php echo $inProgressCount + $k ?></h4>
+                <h4>Total: <?php echo $inProgressCount + $completedCount ?></h4>
             </div>
             <div class="total-content2">
                 <h4>Ongoing: <?php echo $inProgressCount ?></h4>
             </div>
             <div class="total-content3">
-                <h4>Completed: <?php echo $k ?></h4>
+                <h4>Completed: <?php echo $completedCount ?></h4>
             </div>
             
             </div>

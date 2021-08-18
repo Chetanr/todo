@@ -2,19 +2,12 @@
 
 namespace Db;
 
-/**
- * PHP SQLite Update Demo
- */
 class SQLiteSelect {
 
-    /**
-     * PDO object
-     * @var \PDO
-     */
     private $pdo;
 
-    /**
-     * Initialize the object with a specified PDO object
+    /*
+     Initialize the object with a specified PDO object
      */
     public function __construct($pdo) {
         $this->pdo = $pdo;
@@ -24,8 +17,7 @@ class SQLiteSelect {
         get all the tasks from the database
     */
     public function getTasks() {
-        // SQL statement to get all tasks
-        $sql = "SELECT * FROM tasks";
+        $sql = "SELECT * FROM tasks ORDER BY task_priority asc";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
